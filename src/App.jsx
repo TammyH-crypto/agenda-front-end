@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <h1>What a beautiful day</h1>
-    <Employee />
+    <Employee/>
     </>
   )
 }
