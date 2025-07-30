@@ -4,7 +4,7 @@ const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
 const endPoint = "employees";
 
 export const FormPerson = () => {
-  const { newPerson, setNewPerson } = useState({
+  const [newPerson, setNewPerson] = useState({
     name: "",
     department: "",
     role: "",

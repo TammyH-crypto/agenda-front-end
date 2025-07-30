@@ -14,12 +14,27 @@ export const TableEmployee = () => {
     setEmployees(data);
   };
 
+  const handleEdit = (id) => {
+    console.log("Edit employee with id:", id);
+  };
 
+  const handleDelete = async (id) => {
+    const url = `${baseUrl}${endPoint}/${id}`;
+    const result = await fetch(url, {
+      method: "DELETE",
+    });
+    if (result.ok) {
+      console.log("Employee deleted successfully");
+      getEmployees();
+    } else {
+      console.error("Failed to delete employee");
+    }
+  };
 
   useEffect(() => {
     getEmployees();
   }, []);
-console.log("employee data", employees);
+  console.log("employee data", employees);
   return (
     <>
       <h1>Employee Data Base </h1>
@@ -55,19 +70,11 @@ console.log("employee data", employees);
                 >
                   delete
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-info m-1"
-                  onClick={() => handle(employee.employee_id)}
-                >
-                  Info
-                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </>
-     
   );
 };
