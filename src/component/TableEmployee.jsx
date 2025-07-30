@@ -14,8 +14,11 @@ export const TableEmployee = () => {
     setEmployees(data);
   };
 
-  const handleEdit = (id) => {
-    console.log("Edit employee with id:", id);
+  const handleEdit = async (id) => {
+    const url = `${baseUrl}${endPoint}/${id}`
+    const result = await fetch(url)``;
+    const data = await result.json();
+    console.log("Edit Employee Data:", data);
   };
 
   const handleDelete = async (id) => {
@@ -70,6 +73,7 @@ export const TableEmployee = () => {
                 >
                   delete
                 </button>
+
               </td>
             </tr>
           ))}

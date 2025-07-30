@@ -8,17 +8,20 @@ export const FormPerson = () => {
     name: "",
     department: "",
     role: "",
+    task: "",
   });
 
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    const url = baseUrl + endPoint;
-    const result = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(newPerson),
-      headers: {
-        "content-type": "application/json",
+    const token = localStorage.getItem("token")
+        const url = baseUrl + endPoint
+        const result = await fetch(url, {
+            method: "POST", 
+            body: JSON.stringify(newPerson), 
+            headers: {
+                'Content-Type' : 'application/json', 
+                'Authorization' : token
       },
     });
 
