@@ -2,13 +2,18 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Employee } from './page/Employee'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
 
   return (
     <>
-    <h1>What a beautiful day</h1>
-    <Employee/>
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Employee />} />
+    <Route path="/employee" element={<Employee />} />
+     </Routes>
+    </BrowserRouter>
+
     </>
   )
 }
