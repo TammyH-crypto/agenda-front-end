@@ -1,11 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
 const endPoint = "employees";
 
 export const TableEmployee = () => {
   const [employees, setEmployees] = useState([]);
+
+  const navigate = useNavigate()
 
   const getEmployees = async () => {
     const url = `${baseUrl}${endPoint}`;
@@ -15,10 +18,7 @@ export const TableEmployee = () => {
   };
 
   const handleEdit = async (id) => {
-    const url = `${baseUrl}${endPoint}/${id}`
-    const result = await fetch(url);
-    const data = await result.json();
-    console.log("Edit Employee Data:", data);
+    navigate(`/edit-person/${id}`)
   };
 
   const handleDelete = async (id) => {
@@ -45,16 +45,18 @@ export const TableEmployee = () => {
       <table>
         <thead>
           <tr>
-            <th>id</th>
+            
             <th>Name</th>
             <th>department</th>
             <th>role</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {employees.map((employee) => (
             <tr key={employee.employee_id}>
-              <td>{employee.employee_id}</td>
+              
               <td>{employee.name}</td>
               <td>{employee.department}</td>
               <td>{employee.role}</td>
@@ -66,6 +68,8 @@ export const TableEmployee = () => {
                 >
                   Edit
                 </button>
+              </td>
+              <td>
                 <button
                   type="button"
                   className="btn btn-danger m-1"

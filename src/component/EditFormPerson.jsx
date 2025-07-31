@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
-const endPoint = "person";
+const endPoint = "employees";
 
 export const EditFormPerson = () => {
   const navigate = useNavigate();
 
   const params = useParams();
+  
 
   const [personEdit, setPersonEdit] = useState({
     name: "",
     department: "",
-    role: "",
-    task: "",
+    role: ""
   });
 
   const formHandler = (event) => {
@@ -23,8 +23,7 @@ export const EditFormPerson = () => {
     const temp = {
       name: personEdit.name,
       department: personEdit.department,
-      role: personEdit.role,
-      task: personEdit.task,
+      role: personEdit.role
     };
 
     temp[name] = value;
@@ -35,24 +34,19 @@ export const EditFormPerson = () => {
   const getPersonById = async () => {
     const { id_person } = params;
     const baseUrl = import.meta.env.VITE_BASE_URL;
-    const endPoint = "person";
+    const endPoint = "employees";
     const url = `${baseUrl}${endPoint}/${id_person}`;
-    const token = localStorage.getItem("token");
-    const result = await fetch(url, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    //const token = localStorage.getItem("token");
+    const result = await fetch(url);
     const data = await result.json();
     const element = data[0];
 
-    const { name, department, role, task} = element;
+    const { name, department, role } = element;
 
     const temp = {
       name: name,
-      department: "",
-      role: "",
-      task: "",
+      department: department,
+      role: role
     };
 
     setPersonEdit(temp);
@@ -65,14 +59,11 @@ export const EditFormPerson = () => {
 
     const url = `${baseUrl}${endPoint}/${id_person}`;
 
-    const token = localStorage.getItem("token");
-
     const result = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(personEdit),
       headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
+        "Content-Type": "application/json"
       },
     });
 
@@ -121,16 +112,7 @@ export const EditFormPerson = () => {
               className="form-control"
             />
           </div>
-          <div className="mb-3">
-            <label className="form-label">Task</label>
-            <input
-              name="task"
-              onChange={formHandler}
-              value={personEdit.task}
-              type="text"
-              className="form-control"
-            />
-          </div>
+         
 
           <button className="btn btn-primary w-100">Save Data</button>
         </form>

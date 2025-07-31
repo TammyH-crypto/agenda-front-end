@@ -9,20 +9,20 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-    <Route path="/" element={<Employee />} />
-    <Route path="/employee" element={<Employee />} />\
-    <Route path="/edit-person" element={<EditPerson />} />
-    <Route path="/task-tracker" element={<TaskTracker />} />
-    <Route path="/task-tracker/:id" element={<TaskTracker />} />
-    <Route path="/task-tracker/edit/:id" element={<TaskTracker />} />
-     </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Employee />} />
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/edit-person/:id_person" element={<EditPerson />} />
+          <Route path="/task-tracker" element={<TaskTracker />} />
+          <Route path="/task-tracker/:id" element={<TaskTracker />} />
+          <Route path="/task-tracker/edit/:id" element={<TaskTracker />} />
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
 }
-  
+
 
 export default App

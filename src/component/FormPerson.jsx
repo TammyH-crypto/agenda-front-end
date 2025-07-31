@@ -49,7 +49,7 @@ export const FormPerson = () => {
   };
   return (
     <>
-      <div>Person Form</div>
+      <h1>Person Form</h1>
       <main className="container ml-2 mr-2 mb-5">
         <form onSubmit={submitHandler}>
           <div className="mb-3">
