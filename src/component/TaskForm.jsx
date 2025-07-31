@@ -5,7 +5,7 @@ import { Employee } from "../page/Employee";
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "task";
 
-export const TaskTable = () => {
+export const TaskForm = () => {
   const params = useParams();
   const navigate = useNavigate();
   const { employee_id } = params;
