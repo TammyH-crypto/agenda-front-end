@@ -13,8 +13,8 @@ export const EditFormPerson = () => {
   const [personEdit, setPersonEdit] = useState({
     name: "",
     department: "",
-    role: "",
-    task: "",
+    role: ""
+    
   });
 
   const formHandler = (event) => {
@@ -23,8 +23,7 @@ export const EditFormPerson = () => {
     const temp = {
       name: personEdit.name,
       department: personEdit.department,
-      role: personEdit.role,
-      task: personEdit.task,
+      role: personEdit.role
     };
 
     temp[name] = value;
@@ -65,14 +64,13 @@ export const EditFormPerson = () => {
 
     const url = `${baseUrl}${endPoint}/${id_person}`;
 
-    const token = localStorage.getItem("token");
 
     const result = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(personEdit),
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+       
       },
     });
 
