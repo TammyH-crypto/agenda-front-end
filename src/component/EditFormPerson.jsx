@@ -2,19 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
+const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "employees";
 
 export const EditFormPerson = () => {
   const navigate = useNavigate();
 
   const params = useParams();
-  
 
   const [personEdit, setPersonEdit] = useState({
     name: "",
     department: "",
-    role: ""
+    role: "",
   });
 
   const formHandler = (event) => {
@@ -23,7 +22,7 @@ export const EditFormPerson = () => {
     const temp = {
       name: personEdit.name,
       department: personEdit.department,
-      role: personEdit.role
+      role: personEdit.role,
     };
 
     temp[name] = value;
@@ -46,7 +45,7 @@ export const EditFormPerson = () => {
     const temp = {
       name: name,
       department: department,
-      role: role
+      role: role,
     };
 
     setPersonEdit(temp);
@@ -63,13 +62,13 @@ export const EditFormPerson = () => {
       method: "PUT",
       body: JSON.stringify(personEdit),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
     });
 
     const data = await result.json();
 
-    navigate("/person");
+    navigate("/employee");
   };
 
   useEffect(() => {
@@ -112,7 +111,6 @@ export const EditFormPerson = () => {
               className="form-control"
             />
           </div>
-         
 
           <button className="btn btn-primary w-100">Save Data</button>
         </form>

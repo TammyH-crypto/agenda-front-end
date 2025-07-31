@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
+const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "employees";
 
 export const FormPerson = () => {

@@ -1,14 +1,15 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Tasks } from "../page/Tasks";
 
-const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
+const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "employees";
 
 export const TableEmployee = () => {
   const [employees, setEmployees] = useState([]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const getEmployees = async () => {
     const url = `${baseUrl}${endPoint}`;
@@ -18,7 +19,7 @@ export const TableEmployee = () => {
   };
 
   const handleEdit = async (id) => {
-    navigate(`/edit-person/${id}`)
+    navigate(`/edit-person/${id}`);
   };
 
   const handleDelete = async (id) => {
@@ -34,6 +35,10 @@ export const TableEmployee = () => {
     }
   };
 
+  const handleAdd = async (id) => {
+    navigate(`/task-tracker/${id}`);
+  };
+
   useEffect(() => {
     getEmployees();
   }, []);
@@ -45,18 +50,17 @@ export const TableEmployee = () => {
       <table>
         <thead>
           <tr>
-            
             <th>Name</th>
             <th>department</th>
             <th>role</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Tasks</th>
           </tr>
         </thead>
         <tbody>
           {employees.map((employee) => (
             <tr key={employee.employee_id}>
-              
               <td>{employee.name}</td>
               <td>{employee.department}</td>
               <td>{employee.role}</td>
@@ -77,7 +81,15 @@ export const TableEmployee = () => {
                 >
                   delete
                 </button>
-
+              </td>
+              <td>
+                <button
+                  type="button"
+                  className="btn btn-primary m-1"
+                  onClick={() => handleAdd(employee.employee_id)}
+                >
+                  Tasks
+                </button>
               </td>
             </tr>
           ))}
