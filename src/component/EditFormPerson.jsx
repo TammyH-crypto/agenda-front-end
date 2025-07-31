@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const baseUrl = import.meta.env.VITE_BASE_URL;
+const baseUrl = "https://tammy-backend.codex-p4-2025.click/api/";
 const endPoint = "person";
 
 export const EditFormPerson = () => {
@@ -46,7 +46,7 @@ export const EditFormPerson = () => {
     const data = await result.json();
     const element = data[0];
 
-    const { name, birth_date, gender } = element;
+    const { name, department, role, task} = element;
 
     const temp = {
       name: name,

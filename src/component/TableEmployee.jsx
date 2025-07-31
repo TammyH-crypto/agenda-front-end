@@ -16,7 +16,7 @@ export const TableEmployee = () => {
 
   const handleEdit = async (id) => {
     const url = `${baseUrl}${endPoint}/${id}`
-    const result = await fetch(url)``;
+    const result = await fetch(url);
     const data = await result.json();
     console.log("Edit Employee Data:", data);
   };

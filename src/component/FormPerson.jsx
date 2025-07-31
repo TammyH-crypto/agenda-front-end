@@ -14,14 +14,14 @@ export const FormPerson = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    const token = localStorage.getItem("token")
-        const url = baseUrl + endPoint
-        const result = await fetch(url, {
-            method: "POST", 
-            body: JSON.stringify(newPerson), 
-            headers: {
-                'Content-Type' : 'application/json', 
-                'Authorization' : token
+    const token = localStorage.getItem("token");
+    const url = baseUrl + endPoint;
+    const result = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(newPerson),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
       },
     });
 
@@ -41,6 +41,10 @@ export const FormPerson = () => {
   };
 
   const handlerRole = (e) => {
+    newPerson.role = e.target.value;
+  };
+
+  const handlerTask = (e) => {
     newPerson.role = e.target.value;
   };
   return (
@@ -72,8 +76,16 @@ export const FormPerson = () => {
               className="form-control"
             />
           </div>
-          <button className="btn btn-primary">New Employee</button>
-          <button className="btn btn-secondary">Cancel</button>
+          <div className="mb-3">
+            <label className="form-label">Task</label>
+            <input
+              onChange={handlerTask}
+              type="text"
+              className="form-control"
+            />
+          </div>
+
+          <button className="btn btn-primary">Save</button>
         </form>
       </main>
     </>
