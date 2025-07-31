@@ -3,9 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Employee } from "../page/Employee";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
-const endPoint = "phone";
+const endPoint = "task";
 
-export const PhoneForm = () => {
+export const TaskTable = () => {
   const params = useParams();
   const navigate = useNavigate();
   const { employee_id } = params;

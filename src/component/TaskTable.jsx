@@ -3,17 +3,18 @@ import { useEffect, useState } from "react";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "task";
-import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export const TaskForm = () => {
+export const TaskTable = () => {
+const params = useParams;
+
   const [task, setTasks] = useState([]);
-  const [employee, setEmployees] = useParams().employee_id;
-  const params = useParams;
+  const [employee, setEmployees] = useState().employee_id;
+  
 };
 const getTasks = async () => {
   const { employee_id } = params;
-  const url = `${baseUrl}${endPoint}/${id}`;
+  const url = `${baseUrl}${endPoint}/${employee_id}`;
   const result = await fetch(url);
   const data = await result.json();
   setTasks(data);
@@ -25,33 +26,34 @@ const deleteTask = async (id) => {
   });
 
   window.location.reload();
-};  
-useEffect(() => {
-  getTasks();
-}, []);
 
-return (
-  <>
-    <table >
-      <thead>
-        <tr>
-          <th>{employee}</th>
-          <th>Tasks</th>
-        </tr>
-      </thead>
-      <tbody>
-        {task.map((task) => (
-          <tr key={employee.employee_id}>
-            <td>{task}</td>
-            <td>
-              <button
-                className="btn btn-caution"
-                onClick={() => deleteTask(item.task)}
-              ></button>
-            </td>
+  useEffect(() => {
+    getTasks();
+  }, []);
+
+  return (
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>{employee}</th>
+            <th>Tasks</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </>
-);
+        </thead>
+        <tbody>
+          {task.map((task) => (
+            <tr key={employee.employee_id}>
+              <td>{task}</td>
+              <td>
+                <button
+                  className="btn btn-caution"
+                  onClick={() => deleteTask(item.task)}
+                ></button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
+}; 
