@@ -5,10 +5,9 @@ import { useParams } from "react-router-dom";
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "task";
 const endPoint2 = "employees";
-import { useParams } from "react-router-dom";
 
 export const TaskTable = () => {
-  const params = useParams;
+  const params = useParams();
 
   const [task, setTasks] = useState([]);
   const [employee, setEmployees] = useState({});

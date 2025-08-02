@@ -24,9 +24,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {isLoginIn && <Menu auth={setLogin} />}
+        {isLogin && <Menu auth={setIsLogin} />}
         <Routes>
-          <Route path="/" element={<Home auth={setLogIn} />} />
+          <Route path="/" element={<Home auth={setIsLogin} />} />
           <Route path="/employee" element={<Employee />} />
           <Route path="/edit-person/:id_person" element={<EditPerson />} />
           <Route path="/task-tracker/:employee_id" element={<Tasks />} />
