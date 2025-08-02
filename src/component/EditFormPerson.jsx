@@ -35,8 +35,12 @@ export const EditFormPerson = () => {
     const baseUrl = import.meta.env.VITE_BASE_URL;
     const endPoint = "employees";
     const url = `${baseUrl}${endPoint}/${id_person}`;
-    //const token = localStorage.getItem("token");
-    const result = await fetch(url);
+    const token = localStorage.getItem("token");
+    const result = await fetch(url, {
+      headers: {
+        Authorization: token,
+      },
+      });
     const data = await result.json();
     const element = data[0];
 
@@ -62,7 +66,8 @@ export const EditFormPerson = () => {
       method: "PUT",
       body: JSON.stringify(personEdit),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': "application/json",
+        'Authorization': token,
       },
     });
 
