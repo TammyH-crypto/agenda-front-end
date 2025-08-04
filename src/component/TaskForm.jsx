@@ -26,10 +26,10 @@ export const TaskForm = () => {
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       method: "POST",
-      body: JSON.stringify([task]),
+      body: JSON.stringify([task, employee_id]),
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        'Authorization': token,
       },
     });
 

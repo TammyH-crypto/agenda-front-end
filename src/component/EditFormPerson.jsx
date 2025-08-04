@@ -73,7 +73,7 @@ export const EditFormPerson = () => {
 
     const data = await result.json();
 
-    navigate("/employee");
+    navigate("/employees");
   };
 
   useEffect(() => {

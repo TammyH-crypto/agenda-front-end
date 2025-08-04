@@ -33,7 +33,7 @@ export const TableEmployee = () => {
     const result = await fetch(url, {
       method: "DELETE",
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
     if (result.ok) {

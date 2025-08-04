@@ -14,7 +14,7 @@ export const Menu = ({ auth }) => {
     <>
       <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/person">
+          <a className="navbar-brand" href="/employees">
             Contact List
           </a>
           <button
@@ -31,7 +31,7 @@ export const Menu = ({ auth }) => {
           <div className="collapse navbar-collapse" id="navbarColor03">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="/person">
+                <a className="nav-link active" href="/employees">
                   Home
                   <span className="visually-hidden">(current)</span>
                 </a>

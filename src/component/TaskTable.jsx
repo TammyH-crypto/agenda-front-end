@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "task";
-const endPoint2 = "employees";
+const endPoint2 = "employee";
 
 export const TaskTable = () => {
   const params = useParams();
@@ -37,7 +37,7 @@ const deleteTask = async (id) => {
 
   useEffect(() => {
     getTasks();
-    getEmployee();
+    getEmployees();
   }, []);
 
   return (

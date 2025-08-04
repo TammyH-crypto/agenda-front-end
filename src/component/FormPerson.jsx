@@ -8,7 +8,6 @@ export const FormPerson = () => {
     name: "",
     department: "",
     role: "",
-    task: "",
   });
 
   const submitHandler = async (event) => {

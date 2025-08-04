@@ -44,7 +44,7 @@ export const Home = ({ auth }) => {
       const data = await result.json()
       localStorage.setItem("token", data.token)
       auth(true)
-      navigate("/employee")
+      navigate("/employees")
     }else{
       setResultLogIn("Invalid Credentials")
     }
