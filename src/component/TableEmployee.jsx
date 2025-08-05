@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Tasks } from "../page/Tasks";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
-const endPoint = "employees";
+const endPoint = "employee";
 
 export const TableEmployee = () => {
   const [employees, setEmployees] = useState([]);
@@ -16,7 +16,7 @@ export const TableEmployee = () => {
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
     const data = await result.json();
@@ -56,7 +56,7 @@ export const TableEmployee = () => {
     <>
       <h1>Employee Data Base </h1>
 
-      <table>
+      <table className="table table-striped border border-dark border-width">
         <thead>
           <tr>
             <th>Name</th>

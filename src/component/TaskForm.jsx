@@ -11,11 +11,12 @@ export const TaskForm = () => {
   const { employee_id } = params;
   const [task, setTask] = useState({
     employee_id: employee_id,
-    task: "",
+    description: "",
+    status: "",
   });
 
   const formHandler = (event) => {
-    const inputTask = event.target.task;
+    const inputTask = event.target.name;
     const inputValue = event.target.value;
     task[inputTask] = inputValue;
   };
@@ -26,10 +27,10 @@ export const TaskForm = () => {
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       method: "POST",
-      body: JSON.stringify([task, employee_id]),
+      body: JSON.stringify(task),
       headers: {
         "Content-Type": "application/json",
-        'Authorization': token,
+        Authorization: token,
       },
     });
 
@@ -39,7 +40,7 @@ export const TaskForm = () => {
   };
 
   const returnHandler = () => {
-    navigate("/task/employee_id");
+    navigate("/employee");
   };
 
   return (
@@ -49,7 +50,16 @@ export const TaskForm = () => {
           <div className="mb-3">
             <label className="form-label">Task</label>
             <input
-              name="task"
+              name="description"
+              onChange={formHandler}
+              type="text"
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Status</label>
+            <input
+              name="status"
               onChange={formHandler}
               type="text"
               className="form-control"

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
-const endPoint = "employees";
+const endPoint = "employee";
 
 export const EditFormPerson = () => {
   const navigate = useNavigate();
@@ -33,12 +33,12 @@ export const EditFormPerson = () => {
   const getPersonById = async () => {
     const { id_person } = params;
     const baseUrl = import.meta.env.VITE_BASE_URL;
-    const endPoint = "employees";
+    const endPoint = "employee";
     const url = `${baseUrl}${endPoint}/${id_person}`;
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
     const data = await result.json();
@@ -67,7 +67,7 @@ export const EditFormPerson = () => {
       body: JSON.stringify(personEdit),
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        'Authorization': token,
       },
     });
 
