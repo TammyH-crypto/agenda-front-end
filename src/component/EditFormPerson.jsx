@@ -40,7 +40,7 @@ export const EditFormPerson = () => {
       headers: {
         Authorization: token,
       },
-      });
+    });
     const data = await result.json();
     const element = data[0];
 
@@ -61,19 +61,19 @@ export const EditFormPerson = () => {
     const id_person = params.id_person;
 
     const url = `${baseUrl}${endPoint}/${id_person}`;
-
+    const token = localStorage.getItem("token");
     const result = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(personEdit),
       headers: {
-        'Content-Type': "application/json",
-        'Authorization': token,
+        "Content-Type": "application/json",
+        Authorization: token,
       },
     });
 
     const data = await result.json();
 
-    navigate("/employees");
+    navigate("/employee");
   };
 
   useEffect(() => {

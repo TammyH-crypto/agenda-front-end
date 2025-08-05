@@ -20,7 +20,7 @@ export const TaskForm = () => {
     task[inputTask] = inputValue;
   };
 
-  const submintHandler = async () => {
+  const submitHandler = async () => {
     event.preventDefault();
     const url = `${baseUrl}${endPoint}`;
     const token = localStorage.getItem("token");
@@ -45,7 +45,7 @@ export const TaskForm = () => {
   return (
     <>
       <main className="container ml-2 mr-2 mb-5 mt-5">
-        <form onSubmit={submintHandler}>
+        <form onSubmit={submitHandler}>
           <div className="mb-3">
             <label className="form-label">Task</label>
             <input

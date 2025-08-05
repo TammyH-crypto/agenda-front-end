@@ -10,15 +10,15 @@ export const TaskTable = () => {
   const params = useParams();
 
   const [task, setTasks] = useState([]);
-  const [employee, setEmployees] = useState({});
-};
+  //const [employee, setEmployees] = useState({});
+
 const getTasks = async () => {
   const { employee_id } = params;
   const url = `${baseUrl}${endPoint}/${employee_id}`;
   const token = localStorage.getItem("token");
   const result = await fetch(url, {
     headers: {
-      Authorization: token,
+      'Authorization': token,
     },
   });
   const data = await result.json();
@@ -29,15 +29,15 @@ const deleteTask = async (id) => {
   const result = await fetch(url, {
     method: "DELETE",
     headers: {
-      Authorization: token,
+      'Authorization': token,
     },
   });
 
   window.location.reload();
-
+};
   useEffect(() => {
     getTasks();
-    getEmployees();
+    
   }, []);
 
   return (
@@ -45,13 +45,13 @@ const deleteTask = async (id) => {
       <table>
         <thead>
           <tr>
-            <th>{employee}</th>
+            <th>Name</th>
             <th>Tasks</th>
           </tr>
         </thead>
         <tbody>
           {task.map((task) => (
-            <tr key={employee.employee_id}>
+            <tr key={task.task_id}>
               <td>{task}</td>
               <td>
                 <button
