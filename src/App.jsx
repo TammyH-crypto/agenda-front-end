@@ -27,8 +27,8 @@ function App() {
         {isLogin && <Menu auth={setIsLogin} />}
         <Routes>
           <Route path="/" element={<Home auth={setIsLogin} />} />
-          <Route path="/employee" element={<Employee />} />
-          <Route path="/edit-person/:id_person" element={<EditPerson />} />
+          {isLogin && <Route path="/employee" element={<Employee />} />}
+          {isLogin &&<Route path="/edit-person/:id_person" element={<EditPerson />} />}
           <Route path="/task-tracker/:employee_id" element={<Tasks />} />
         </Routes>
       </BrowserRouter>

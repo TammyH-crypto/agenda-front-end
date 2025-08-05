@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "task";
-const endPoint2 = "employee";
+const endPoint2 = "employees";
 
 export const TaskTable = () => {
   const params = useParams();
@@ -17,7 +17,7 @@ export const TaskTable = () => {
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
     const data = await result.json();

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Tasks } from "../page/Tasks";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
-const endPoint = "employee";
+const endPoint = "employees";
 
 export const TableEmployee = () => {
   const [employees, setEmployees] = useState([]);
