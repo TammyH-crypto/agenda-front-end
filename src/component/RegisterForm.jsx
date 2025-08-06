@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
-const endPoint = "register";
+const endPoint = "user";
 
 export const RegisterForm = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -28,45 +28,46 @@ export const RegisterForm = () => {
     window.location.reload();
 
     navigate("/");
-    return (
-      <>
-        <main className="container ml-2 mr-2 mb-5 mt-5">
-          <form onSubmit={submitHandler}>
-            <div className="mb-3">
-              <label className="form-label">Name</label>
-              <input
-                name="name"
-                onChange={handleChange}
-                value={form.name}
-                type="text"
-                className="form-control"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Email</label>
-              <input
-                name="email"
-                onChange={handleChange}
-                value={form.email}
-                type="email"
-                className="form-control"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Password</label>
-              <input
-                name="password"
-                onChange={handleChange}
-                value={form.password}
-                type="password"
-                className="form-control"
-              />
-            </div>
-
-            <button className="btn btn-success w-100">Register</button>
-          </form>
-        </main>
-      </>
-    );
   };
+
+  return (
+    <>
+      <main className="container ml-2 mr-2 mb-5 mt-5">
+        <form onSubmit={submitHandler}>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input
+              name="name"
+              onChange={handleChange}
+              value={form.name}
+              type="text"
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <input
+              name="email"
+              onChange={handleChange}
+              value={form.email}
+              type="email"
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <input
+              name="password"
+              onChange={handleChange}
+              value={form.password}
+              type="password"
+              className="form-control"
+            />
+          </div>
+
+          <button className="btn btn-success w-100">Register</button>
+        </form>
+      </main>
+    </>
+  );
 };

@@ -44,9 +44,9 @@ export const Home = ({ auth }) => {
       setResultLogIn("Invalid Credentials");
     }
   };
- const returnHandler = () => {
-   navigate("/register");
- };
+  const returnHandler = () => {
+    navigate("/register");
+  };
 
   return (
     <>
