@@ -44,6 +44,9 @@ export const Home = ({ auth }) => {
       setResultLogIn("Invalid Credentials");
     }
   };
+ const returnHandler = () => {
+   navigate("/register");
+ };
 
   return (
     <>
@@ -75,7 +78,12 @@ export const Home = ({ auth }) => {
 
             <button className="btn btn-primary w-100">Log In</button>
           </form>
-          <button className="btn btn-secondary mt-2 w-100">Register</button>
+          <button
+            className="btn btn-secondary mt-2 w-100"
+            onClick={returnHandler}
+          >
+            Register
+          </button>
         </div>
       </div>
     </>

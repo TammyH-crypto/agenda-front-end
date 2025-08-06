@@ -76,7 +76,7 @@ export const TableEmployee = () => {
               <td>
                 <button
                   type="button"
-                  className="btn btn-primary m-1"
+                  className="btn btn-info m-1"
                   onClick={() => handleEdit(employee.employee_id)}
                 >
                   Edit
