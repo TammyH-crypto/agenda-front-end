@@ -6,7 +6,12 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 const endPoint = "user";
 
 export const RegisterForm = () => {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({
+    email: "",
+    username: "",
+    password: "",
+    name: "",
+  });
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -25,25 +30,15 @@ export const RegisterForm = () => {
     });
     const data = await result.json();
 
-    window.location.reload();
+    //window.location.reload();
 
-    navigate("/");
+    navigate("/employees");
   };
 
   return (
     <>
       <main className="container ml-2 mr-2 mb-5 mt-5">
         <form onSubmit={submitHandler}>
-          <div className="mb-3">
-            <label className="form-label">Name</label>
-            <input
-              name="name"
-              onChange={handleChange}
-              value={form.name}
-              type="text"
-              className="form-control"
-            />
-          </div>
           <div className="mb-3">
             <label className="form-label">Email</label>
             <input
@@ -55,12 +50,32 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="mb-3">
+            <label className="form-label">User Name</label>
+            <input
+              name="username"
+              onChange={handleChange}
+              value={form.username}
+              type="username"
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
             <label className="form-label">Password</label>
             <input
               name="password"
               onChange={handleChange}
               value={form.password}
               type="password"
+              className="form-control"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input
+              name="name"
+              onChange={handleChange}
+              value={form.name}
+              type="name"
               className="form-control"
             />
           </div>
