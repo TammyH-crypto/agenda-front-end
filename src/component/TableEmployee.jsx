@@ -54,7 +54,7 @@ export const TableEmployee = () => {
   console.log("employee data", employees);
   return (
     <>
-      <h1>Employee Data Base </h1>
+      <h1 className=" p-5 text-success">Employee Data Base </h1>
 
       <table className="table table-striped border border-dark border-width">
         <thead>

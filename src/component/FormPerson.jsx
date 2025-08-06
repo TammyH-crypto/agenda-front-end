@@ -48,11 +48,11 @@ export const FormPerson = () => {
   };
   return (
     <>
-      <h1>Person Form</h1>
+      <h1 className="p-5 text-info">Personal Roles</h1>
       <main className="container ml-2 mr-2 mb-5">
         <form onSubmit={submitHandler}>
           <div className="mb-3">
-            <label className="form-label">Name</label>
+            <label className="form-label text-danger">Name</label>
             <input
               onChange={handlerName}
               type="text"
@@ -60,7 +60,7 @@ export const FormPerson = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Department</label>
+            <label className="form-label text-success">Department</label>
             <input
               onChange={handlerDepartment}
               type="text"
@@ -68,7 +68,7 @@ export const FormPerson = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Role</label>
+            <label className="form-label text-warning">Role</label>
             <input
               onChange={handlerRole}
               type="text"
@@ -76,7 +76,7 @@ export const FormPerson = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Task</label>
+            <label className="form-label text-primary">Task</label>
             <input
               onChange={handlerTask}
               type="text"
@@ -84,7 +84,7 @@ export const FormPerson = () => {
             />
           </div>
 
-          <button className="btn btn-primary">Save</button>
+          <button className="btn btn-info">Save</button>
         </form>
       </main>
     </>

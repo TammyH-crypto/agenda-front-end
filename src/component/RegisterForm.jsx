@@ -30,9 +30,7 @@ export const RegisterForm = () => {
     });
     const data = await result.json();
 
-    //window.location.reload();
-
-    navigate("/employees");
+    navigate("/");
   };
 
   return (
