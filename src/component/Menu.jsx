@@ -14,14 +14,14 @@ export const Menu = ({ auth }) => {
     <>
       <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/employee">
+          <a className="navbar-brand text-primary" href="/employee">
             Contact List
           </a>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarColor03"
+            data-bs-target="#navbarColor06"
             aria-controls="navbarColor03"
             aria-expanded="false"
             aria-label="Toggle navigation"
@@ -31,17 +31,14 @@ export const Menu = ({ auth }) => {
           <div className="collapse navbar-collapse" id="navbarColor03">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="/employee">
+                <a className="nav-link active text-warning" href="/employee">
                   Home
                   <span className="visually-hidden">(current)</span>
                 </a>
               </li>
             </ul>
             <div className="d-flex">
-              <button
-                onClick={logOut}
-                className="btn btn-secondary my-2 my-sm-0"
-              >
+              <button onClick={logOut} className="btn btn-info my-2 my-sm-0 ">
                 Log Out
               </button>
             </div>
