@@ -7,6 +7,7 @@ import { EditPerson } from "./page/EditPerson";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./page/Home";
 import { Menu } from "./component/Menu";
+import { Register } from "./page/Register"
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           {isLogin && <Route path="/employee" element={<Employee />} />}
           {isLogin && <Route path="/edit-person/:id_person" element={<EditPerson />} />}
           <Route path="/task-tracker/:employee_id" element={<Tasks />} />
+          <Route path= "/register" element={<Register/>} />
         </Routes>
       </BrowserRouter>
     </>

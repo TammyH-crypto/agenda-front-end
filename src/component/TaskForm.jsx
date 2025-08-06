@@ -30,7 +30,7 @@ export const TaskForm = () => {
       body: JSON.stringify(task),
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        'Authorization': token,
       },
     });
 

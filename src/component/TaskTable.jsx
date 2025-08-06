@@ -29,7 +29,7 @@ export const TaskTable = () => {
     const result = await fetch(url, {
       method: "DELETE",
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
 
