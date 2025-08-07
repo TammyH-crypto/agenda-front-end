@@ -16,7 +16,7 @@ export const TableEmployee = () => {
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       headers: {
-        'Authorization': token,
+        Authorization: token,
       },
     });
     const data = await result.json();
@@ -33,7 +33,7 @@ export const TableEmployee = () => {
     const result = await fetch(url, {
       method: "DELETE",
       headers: {
-        'Authorization': token,
+        Authorization: token,
       },
     });
     if (result.ok) {
@@ -59,15 +59,15 @@ export const TableEmployee = () => {
       <table className="table table-striped border border-dark border-width">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>department</th>
-            <th>role</th>
-            <th>Edit</th>
-            <th>Delete</th>
-            <th>Tasks</th>
+            <th className="text-primary">Name</th>
+            <th className="text-danger">department</th>
+            <th className="text-info">role</th>
+            <th className="text-dark">Edit</th>
+            <th className="text-success">Delete</th>
+            <th className="text-warning">Tasks</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="">
           {employees.map((employee) => (
             <tr key={employee.employee_id}>
               <td>{employee.name}</td>

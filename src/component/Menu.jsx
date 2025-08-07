@@ -12,7 +12,7 @@ export const Menu = ({ auth }) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+      <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="light">
         <div className="container-fluid">
           <a className="navbar-brand text-primary" href="/employee">
             Contact List

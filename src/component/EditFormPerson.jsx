@@ -38,7 +38,7 @@ export const EditFormPerson = () => {
     const token = localStorage.getItem("token");
     const result = await fetch(url, {
       headers: {
-        'Authorization': token,
+        Authorization: token,
       },
     });
     const data = await result.json();
@@ -67,7 +67,7 @@ export const EditFormPerson = () => {
       body: JSON.stringify(personEdit),
       headers: {
         "Content-Type": "application/json",
-        'Authorization': token,
+        Authorization: token,
       },
     });
 
@@ -82,12 +82,12 @@ export const EditFormPerson = () => {
 
   return (
     <>
-      <h1>Edit Person</h1>
+      <h1 className=" p-5 text-warning">Edit Employee</h1>
 
       <main className="container ml-2 mr-2 mb-5">
         <form onSubmit={submintHandler}>
           <div className="mb-3">
-            <label className="form-label">Name</label>
+            <label className="form-label text-success">Name</label>
             <input
               name="name"
               onChange={formHandler}
@@ -97,7 +97,7 @@ export const EditFormPerson = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Department</label>
+            <label className="form-label text-info">Department</label>
             <input
               name="department"
               onChange={formHandler}
@@ -107,7 +107,7 @@ export const EditFormPerson = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Role</label>
+            <label className="form-label text-danger">Role</label>
             <input
               name="role"
               onChange={formHandler}
@@ -117,7 +117,7 @@ export const EditFormPerson = () => {
             />
           </div>
 
-          <button className="btn btn-primary w-100">Save Data</button>
+          <button className="btn btn-success w-100">Save Data</button>
         </form>
       </main>
     </>

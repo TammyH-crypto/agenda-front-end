@@ -30,7 +30,7 @@ export const TaskForm = () => {
       body: JSON.stringify(task),
       headers: {
         "Content-Type": "application/json",
-        'Authorization': token,
+        Authorization: token,
       },
     });
 
@@ -48,7 +48,7 @@ export const TaskForm = () => {
       <main className="container ml-2 mr-2 mb-5 mt-5">
         <form onSubmit={submitHandler}>
           <div className="mb-3">
-            <label className="form-label">Task</label>
+            <label className="form-label text-info">Task</label>
             <input
               name="description"
               onChange={formHandler}
@@ -57,7 +57,7 @@ export const TaskForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Status</label>
+            <label className="form-label text-success">Status</label>
             <input
               name="status"
               onChange={formHandler}
@@ -66,7 +66,7 @@ export const TaskForm = () => {
             />
           </div>
 
-          <button className="btn btn-primary w-100">Save</button>
+          <button className="btn btn-danger w-100">Save</button>
         </form>
         <button className="btn btn-warning mt-3 w-100" onClick={returnHandler}>
           Return

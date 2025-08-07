@@ -20,7 +20,7 @@ export const FormPerson = () => {
       body: JSON.stringify(newPerson),
       headers: {
         "Content-Type": "application/json",
-        'Authorization': token,
+        Authorization: token,
       },
     });
 

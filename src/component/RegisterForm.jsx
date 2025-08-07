@@ -38,7 +38,7 @@ export const RegisterForm = () => {
       <main className="container ml-2 mr-2 mb-5 mt-5">
         <form onSubmit={submitHandler}>
           <div className="mb-3">
-            <label className="form-label">Email</label>
+            <label className="form-label text-info">Email</label>
             <input
               name="email"
               onChange={handleChange}
@@ -48,7 +48,7 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">User Name</label>
+            <label className="form-label text-warning">User Name</label>
             <input
               name="username"
               onChange={handleChange}
@@ -58,7 +58,7 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Password</label>
+            <label className="form-label text-light">Password</label>
             <input
               name="password"
               onChange={handleChange}
@@ -68,7 +68,7 @@ export const RegisterForm = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Name</label>
+            <label className="form-label text-danger">Name</label>
             <input
               name="name"
               onChange={handleChange}
