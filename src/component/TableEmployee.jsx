@@ -56,9 +56,9 @@ export const TableEmployee = () => {
     <>
       <h1 className=" p-5 text-success">Employee Data Base </h1>
 
-      <table className="table table-striped border border-dark border-width">
+      <table className="table table-striped border border-dark border-width ">
         <thead>
-          <tr>
+          <tr className="table-success">
             <th className="text-primary">Name</th>
             <th className="text-danger">department</th>
             <th className="text-info">role</th>
@@ -67,7 +67,7 @@ export const TableEmployee = () => {
             <th className="text-warning">Tasks</th>
           </tr>
         </thead>
-        <tbody className="">
+        <tbody>
           {employees.map((employee) => (
             <tr key={employee.employee_id}>
               <td>{employee.name}</td>
